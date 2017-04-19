@@ -7,3 +7,27 @@ const {bookshelf} = require('../db/database')
 // When adding the 'table' property use your old friend DB Browser for SQLite to
 // open up the musichistory db and inspect the tables. Add the appropriate table name for
 // interfacing with the songs collection
+const Song = bookshelf.Model.extend({
+  tableName: 'Song'
+},{
+  getAll: function() {
+    return this.forge()
+    .fetchAll()
+    .then((rows) => {
+      return rows
+    })
+    .catch((error) => {
+      return error
+    })
+  },
+  getSingleSong: function(id) {
+    return this.forge(id)
+    .fetch()
+    .then((song) => {
+      return song
+    })
+    .catch((error) => {
+      return error
+    })
+  }
+})
