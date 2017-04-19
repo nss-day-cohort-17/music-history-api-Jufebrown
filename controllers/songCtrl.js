@@ -6,8 +6,8 @@
 const {bookshelf} = require('../db/database')
 const Song = require('../models/song')
 
-module.exports.getSong = ({params:{id}}, res, next) => {
-  Song.getSingleSong(id)
+module.exports.getSingleSong = ({params:{SongId}}, res, next) => {
+  Song.getSong({SongId})
   .then((song) => {
     res.status(200).json(show)
   })
