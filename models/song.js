@@ -32,4 +32,4 @@ const Song = bookshelf.Model.extend({
   }
 })
 
-module.exports = bookshelf.model('Song', Song)
+module.exports = ('Song', Song)
