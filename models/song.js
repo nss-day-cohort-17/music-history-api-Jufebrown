@@ -31,3 +31,5 @@ const Song = bookshelf.Model.extend({
     })
   }
 })
+
+module.exports = bookshelf.model('Song', Song)
