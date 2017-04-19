@@ -3,3 +3,5 @@
 // <require a song model>
 // < use model methods for getting all songs and one song then send the response back with the data>
 // <stretch goal: methods for adding, deleting, editing a song>
+const {bookshelf} = require('../db/database')
+const Song = require('../models/song')
