@@ -9,7 +9,7 @@ const Song = require('../models/song')
 module.exports.getSingleSong = ({params:{SongId}}, res, next) => {
   Song.getSong({SongId})
   .then((song) => {
-    res.status(200).json(show)
+    res.status(200).json(song)
   })
   .catch((error) => {
     next(error)
