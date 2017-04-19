@@ -22,3 +22,19 @@ app.use((req, res, next) => {
   err.status = 404
   next(err)
 })
+
+app.use((err, req, res, next) => {
+  console.log('error', err)
+  res.status(err.status || 500)
+  res.json({
+    message: err.message,
+    error: err
+  })
+})
+
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  console.log('Listening on port: ${port}')
+})
+
+module.exports = app
