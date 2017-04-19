@@ -1,11 +1,12 @@
 'use strict'
 
 const express = require('express');
+// const path = require('path')
 const bodyParser = require('body-parser');
+const routes = require('./routes/')
 let app = express();
 
 // <Include the router index file>
-const routes = require('./routes/')
 
 // <Setup your routes middleware>
 // <catch any undefined routes with a 404 middleware>
