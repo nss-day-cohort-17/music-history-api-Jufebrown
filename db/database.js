@@ -6,7 +6,8 @@
 
 // No need to make migrations, since the db and tables already exist
 const environment = process.env.NODE_ENV || 'development'
-const config = require('knex')(config)
+const config = require('../knexfile.js')[environment]
+const knex = require('knex')(config)
 const bookshelf = require('bookshelf')(knex)
 
 bookshelf.plugin('registry')
